@@ -6,7 +6,7 @@ const Pool = require("pg").Pool;
 
 function query(queryString, cbFunc) {
     const pool = new Pool({
-        connectionString: DATABASE_URL
+        connectionString: process.env.DATABASE_URL
     });
 
     pool.query(queryString, (error, results) => {
